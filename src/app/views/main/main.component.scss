@@ -1,0 +1,27 @@
+h3 {
+  position: relative;
+}
+
+.ui-state-default {
+  background: linear-gradient(360deg, #076BFF 0%, #007BFF 100%);
+  color: #FFFFFF;
+}
+
+.ui-state-active {
+  background: linear-gradient(360deg, #076BFF 0%, #007BFF 100%);
+}
+
+.ui-corner-all, .ui-corner-bottom, .ui-corner-left, .ui-corner-bl {
+  border: none;
+}
+
+.accordion-button::after {
+  background-image: url("../../../assets/images/Vector 2.png");
+  --bs-accordion-btn-icon-width: 0.8rem;
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    margin-top: 72px;
+  }
+}

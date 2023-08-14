@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="border-top border-1 border-white">
+    <p class="text-center fs-2 fw-bold my-5">Наши чайные коллекции</p>
+  </div>
+
+  <div class="row row-cols-1 row-cols-md-3 g-4 px-4 mb-4">
+    <catalog-card class="col-lg-4 col-md-6" *ngFor="let card of cards" [card]="card"></catalog-card>
+  </div>
+  <div class="loader-bg" *ngIf="loading">
+    <div class="loader"></div>
+  </div>
+</div>

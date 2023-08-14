@@ -1,0 +1,104 @@
+<div class="container">
+  <div class="border-top border-1 border-white">
+    <p id="title" class="text-center fs-2 fw-bold mt-5 mb-5">Сделать заказ</p>
+  </div>
+
+  <form id="form" class="col-lg-6 mx-auto mt-3" [formGroup]="submitForm" *ngIf="showForm">
+    <div class="row">
+      <div class="col-lg-4">
+        <label for="inputName" class="form-label mt-3">Имя</label>
+        <input type="text" class="form-control" formControlName="name" id="inputName">
+        <div
+          *ngIf="submitForm.get('name')?.invalid && (submitForm.get('name')?.dirty || submitForm.get('name')?.touched)">
+          <div class="invalid-feedback" *ngIf="submitForm.get('name')?.errors?.['required']">
+            Пожалуйста, укажите имя.
+          </div>
+          <div class="invalid-feedback" *ngIf="submitForm.get('name')?.errors?.['pattern']">
+            Некорректное имя.
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <label for="inputLastname" class="form-label mt-3">Фамилия</label>
+        <input type="text" class="form-control" formControlName="lastName" id="inputLastname">
+        <div *ngIf="submitForm.get('lastName')?.invalid
+        && (submitForm.get('lastName')?.dirty || submitForm.get('lastName')?.touched)">
+          <div class="invalid-feedback" *ngIf="submitForm.get('lastName')?.errors?.['required']">
+            Пожалуйста, укажите фамилию.
+          </div>
+          <div class="invalid-feedback" *ngIf="submitForm.get('lastName')?.errors?.['pattern']">
+            Некорректная фамилия.
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <label for="inputPhone" class="form-label mt-3">Телефон</label>
+        <input type="text" class="form-control" formControlName="phone" id="inputPhone">
+        <div
+          *ngIf="submitForm.get('phone')?.invalid && (submitForm.get('phone')?.dirty || submitForm.get('phone')?.touched)">
+          <div class="invalid-feedback" *ngIf="submitForm.get('phone')?.errors?.['required']">
+            Пожалуйста, укажите номер телефона.
+          </div>
+          <div class="invalid-feedback" *ngIf="submitForm.get('phone')?.errors?.['pattern']">
+            Некорректный номер телефона.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6">
+        <label for="inputCountry" class="form-label mt-3">Страна</label>
+        <input type="text" class="form-control" formControlName="country" id="inputCountry">
+        <div class="invalid-feedback" *ngIf="submitForm.get('country')?.invalid
+        && (submitForm.get('country')?.dirty || submitForm.get('country')?.touched) && submitForm.get('country')?.errors?.['required']">
+          Пожалуйста, укажите страну.
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <label for="inputZip" class="form-label mt-3">Индекс</label>
+        <input type="text" class="form-control" formControlName="zip" id="inputZip">
+        <div class="invalid-feedback" *ngIf="submitForm.get('zip')?.invalid
+        && (submitForm.get('zip')?.dirty || submitForm.get('zip')?.touched) && submitForm.get('zip')?.errors?.['required']">
+          Пожалуйста, укажите почтовый индекс.
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <label for="inputAddress" class="form-label mt-3">Адрес</label>
+        <input type="text" class="form-control" formControlName="address" id="inputAddress">
+        <div *ngIf="submitForm.get('address')?.invalid && (submitForm.get('address')?.dirty || submitForm.get('address')?.touched)">
+          <div class="invalid-feedback" *ngIf="submitForm.get('address')?.errors?.['required']">
+            Пожалуйста, укажите адрес.
+          </div>
+          <div class="invalid-feedback" *ngIf="submitForm.get('address')?.errors?.['pattern']">
+            Некорректный адрес.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <label for="inputProduct" class="form-label mt-3">Товар</label>
+        <input class="form-control" formControlName="product" id="inputProduct" readonly="readonly">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <label for="validationTextarea" class="form-label"></label>
+        <textarea class="form-control" id="validationTextarea" formControlName="comment"
+                  placeholder="Комментарий к заказу..."></textarea>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col d-flex">
+        <button class="btn btn-primary mt-4 col-lg-3 p-2 hvr-grow" (click)="submit()">Отправить</button>
+        <div class="error fw-bold ms-4" *ngIf="showError">Произошла ошибка. Попробуйте еще раз.</div>
+      </div>
+    </div>
+  </form>
+</div>
+
+<div class="block text-center fs-3 fw-bold" *ngIf="showBlock">
+  Спасибо за заказ. Мы свяжемся с вами в ближайшее время!
+</div>

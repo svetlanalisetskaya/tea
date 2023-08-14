@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="border-top border-1 border-white">
+    <p class="text-center fs-2 fw-bold mt-5 mb-5">Наши чайные коллекции</p>
+  </div>
+
+  <div class="card" *ngIf="card">
+    <a class="tea-image" href="{{card.image}}">
+      <img src="{{card.image}}" class="card-img-top" alt="Чай">
+    </a>
+    <div class="card-body d-flex flex-column align-items-start justify-content-between">
+      <h5 class="card-title fw-bold">{{card.title}}</h5>
+      <p class="card-text">{{card.description}}</p>
+      <div class="price me-3 fw-bold mb-3">Цена: 10.00 руб.</div>
+      <a class="btn btn-primary col-lg-4 p-2 hvr-grow" type="button" routerLink="/order" [queryParams]="{product: card.title}">Купить</a>
+    </div>
+  </div>
+</div>
+

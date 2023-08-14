@@ -1,0 +1,13 @@
+.navbar:nth-child(2) {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  .navbar:nth-child(2) {
+    display: block;
+  }
+
+  .navbar:first-child {
+    display: none;
+  }
+}

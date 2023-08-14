@@ -1,0 +1,102 @@
+<div class="container border-top border-1 border-white">
+
+  <div class="single-item mt-5 mb-4 wow animate__bounceInLeft">
+    <div class="p-md-5 p-4" style="background-image: url(../../../assets/images/1.png)">
+      <div class="pt-md-5">
+        <p class="fs-1 fw-bold mt-md-5 mt-4 pt-md-5 ms-sm-5">Скидки на травяные чаи</p>
+        <p class="fs-4 ms-sm-5 mt-5">Узнай все подробности, заполнив заявку</p>
+        <button class="btn btn-primary btn-lg col-lg-2 mt-5 ms-sm-5 hvr-grow" id="bu" type="button">Заполнить</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="border-top border-1 border-white">
+    <p class="text-center fs-2 fw-bold mt-5 mb-5">Ответы на часто задаваемые вопросы</p>
+  </div>
+
+
+  <div ngbAccordion class="accordion col-lg-8 mx-auto mb-4" [closeOthers]="true">
+    <div ngbAccordionItem [collapsed]="false">
+      <h2 ngbAccordionHeader>
+        <button ngbAccordionButton class="bg-primary text-white">Собираете ли вы подарочные боксы?</button>
+      </h2>
+      <div ngbAccordionCollapse>
+        <div ngbAccordionBody>
+          <ng-template>
+            Да, у нас есть такая услуга. Мы можем собрать подарочный бокс на любой вкус, объем и стоимость!
+          </ng-template>
+        </div>
+      </div>
+    </div>
+    <div ngbAccordionItem>
+      <h2 ngbAccordionHeader>
+        <button ngbAccordionButton class="bg-primary text-white">Сколько у вас разновидностей чая?</button>
+      </h2>
+      <div ngbAccordionCollapse>
+        <div ngbAccordionBody>
+          <ng-template>
+            У нас вы сможете подобрать чай под свой вкус. Начиная от простого, но качественного чая на каждый день,
+            заканчивая легендарными элитными китайскими сортами чая и даже коллекционными пуэрами. Мы предлагаем
+            вам на выбор множество разновидностей чая из Китая, Японии, Индии, Цейлона, а так же Тайваньские чаи.
+            Зеленый китайский и японский чай, белый чай, красный, китайские и тайваньские улуны, молодые и
+            многолетние шу и шен пуэры, различные чайные добавки и «не чайный чай».
+          </ng-template>
+        </div>
+      </div>
+    </div>
+    <div ngbAccordionItem>
+      <h2 ngbAccordionHeader>
+        <button ngbAccordionButton class="bg-primary text-white">В какой срок осуществляется доставка?</button>
+      </h2>
+      <div ngbAccordionCollapse>
+        <div ngbAccordionBody>
+          <ng-template>
+            Доставка осуществляется ежедневно. Заказы, поступившие до 15:00 доставляются в день поступления. Заказы,
+            поступившие после 15:00 доставляются на следующий день.
+          </ng-template>
+        </div>
+      </div>
+    </div>
+    <div ngbAccordionItem>
+      <h2 ngbAccordionHeader>
+        <button ngbAccordionButton class="bg-primary text-white">У вас обновляется ассортимент?</button>
+      </h2>
+      <div ngbAccordionCollapse>
+        <div ngbAccordionBody>
+          <ng-template>
+            Да, ассортимент регулярно обновляется!
+          </ng-template>
+        </div>
+      </div>
+    </div>
+    <div ngbAccordionItem>
+      <h2 ngbAccordionHeader>
+        <button ngbAccordionButton class="bg-primary text-white">Какого объема у вас пачки чая?</button>
+      </h2>
+      <div ngbAccordionCollapse>
+        <div ngbAccordionBody>
+          <ng-template>
+            У нас вы можете заказать чай в объемах 50г., 100г. и 250 г.
+          </ng-template>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ng-template class="modal" #popup let-modal>
+    <div class="modal-header">
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss()"></button>
+    </div>
+    <div class="modal-body">
+      <form>
+        <div class="modal-text fs-4 fw-bold">Посмотрите наши чайные коллекции</div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-primary fs-5 mt-3 hvr-grow" routerLink="/catalog" (click)="modal.dismiss()">
+        Смотреть
+      </button>
+    </div>
+  </ng-template>
+</div>
+

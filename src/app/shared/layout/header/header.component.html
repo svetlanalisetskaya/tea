@@ -1,0 +1,17 @@
+<nav class="navbar navbar-expand bg-light px-1 py-2 mb-4 border-bottom border-1 border-white">
+  <div class="container-fluid">
+    <a class="navbar-brand fs-5" href="#">Logo</a>
+    <ul class="navbar-nav me-auto">
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="''" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Главная</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="'/catalog'" routerLinkActive="active">Каталог</a>
+      </li>
+    </ul>
+    <form class="d-flex" role="search">
+      <input class="form-control me-1" type="search" placeholder="Поиск чая">
+      <button class="btn btn-outline-primary ms-1" type="submit">Найти</button>
+    </form>
+  </div>
+</nav>
